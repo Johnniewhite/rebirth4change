@@ -4,9 +4,9 @@ import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
-  generator: 'v0.dev',
+  title: 'Rebirth 4 Change',
+  description: 'Rebirth 4 Change',
+  generator: 'Rebirth 4 Change',
 }
 
 export default function RootLayout({
