@@ -129,10 +129,10 @@ export default function OurStory() {
                   </div>
                   <div className="relative h-48 md:h-auto order-1 md:order-2">
                     <Image
-                      src="/hero-pattern.jpg"
+                      src="/work1.jpg"
                       alt="Project Rebirth in 2018"
                       fill
-                      className="rounded-xl object-cover"
+                      className="rounded-xl object-cover object-top"
                     />
                   </div>
                 </div>
@@ -148,10 +148,10 @@ export default function OurStory() {
                 <div className="mt-6 grid md:grid-cols-2 gap-8">
                   <div className="relative h-48 md:h-auto">
                     <Image
-                      src="/hero-pattern.jpg"
+                      src="/work2.jpg"
                       alt="Project Rebirth in 2019"
                       fill
-                      className="rounded-xl object-cover"
+                      className="rounded-xl object-cover object-top"
                     />
                   </div>
                   <div className="bg-white p-6 rounded-xl shadow-md">
@@ -181,10 +181,10 @@ export default function OurStory() {
                   </div>
                   <div className="relative h-48 md:h-auto order-1 md:order-2">
                     <Image
-                      src="/hero-pattern.jpg"
+                      src="/work3.jpg"
                       alt="Project Rebirth in 2020"
                       fill
-                      className="rounded-xl object-cover"
+                      className="rounded-xl object-cover object-middle"
                     />
                   </div>
                 </div>
@@ -200,10 +200,10 @@ export default function OurStory() {
                 <div className="mt-6 grid md:grid-cols-2 gap-8">
                   <div className="relative h-48 md:h-auto">
                     <Image
-                      src="/hero-pattern.jpg"
+                      src="/work4.jpg"
                       alt="Project Rebirth in 2021"
                       fill
-                      className="rounded-xl object-cover"
+                      className="rounded-xl object-cover object-middle"
                     />
                   </div>
                   <div className="bg-white p-6 rounded-xl shadow-md">
@@ -233,10 +233,10 @@ export default function OurStory() {
                   </div>
                   <div className="relative h-48 md:h-auto order-1 md:order-2">
                     <Image
-                      src="/hero-pattern.jpg"
+                      src="/work5.PNG"
                       alt="Project Rebirth in 2022"
                       fill
-                      className="rounded-xl object-cover"
+                      className="rounded-xl object-cover object-top"
                     />
                   </div>
                 </div>
@@ -252,10 +252,10 @@ export default function OurStory() {
                 <div className="mt-6 grid md:grid-cols-2 gap-8">
                   <div className="relative h-48 md:h-auto">
                     <Image
-                      src="/hero-pattern.jpg"
+                      src="/work1.jpg"
                       alt="Project Rebirth in 2023"
                       fill
-                      className="rounded-xl object-cover"
+                      className="rounded-xl object-cover object-middle"
                     />
                   </div>
                   <div className="bg-white p-6 rounded-xl shadow-md">
@@ -286,10 +286,10 @@ export default function OurStory() {
                   </div>
                   <div className="relative h-48 md:h-auto order-1 md:order-2">
                     <Image
-                      src="/hero-pattern.jpg"
+                      src="/work2.jpg"
                       alt="Project Rebirth today"
                       fill
-                      className="rounded-xl object-cover"
+                      className="rounded-xl object-cover object-top"
                     />
                   </div>
                 </div>
