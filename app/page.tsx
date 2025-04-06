@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, ChevronRight, Heart, Users, Leaf } from "lucide-react"
+import { ArrowRight, ChevronRight, Heart, Users, Leaf, ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useState, useEffect } from "react"
 import { NewsletterModal } from "@/components/NewsletterModal"
@@ -207,18 +207,20 @@ export default function Home() {
             <div className="grid gap-8 md:grid-cols-3">
               <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
                 <div className="relative h-48">
-                  <Image src="/home2.jpg" alt="Success story" fill className="object-cover" />
+                  <Image src="/work1.jpg" alt="Success story" fill className="object-cover" />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">Amina's Journey</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Oluwaseunfunmi's Journey</h3>
                   <p className="text-gray-600 mb-4">
                     From struggling to support her family to becoming a skilled fashion designer and entrepreneur.
                   </p>
                   <Link
-                    href="/stories/amina"
+                    href="https://drive.google.com/file/d/10j9ZBKeC8oSygzU48agpLi5-njhddTEk/view"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center text-emerald-600 font-medium hover:text-emerald-700"
                   >
-                    Read her story <ChevronRight className="ml-1 h-4 w-4" />
+                    Watch her story <ExternalLink className="ml-1 h-4 w-4" />
                   </Link>
                 </div>
               </div>
@@ -232,10 +234,12 @@ export default function Home() {
                     How skills training helped Fatima create a sustainable business and inspire her community.
                   </p>
                   <Link
-                    href="/stories/fatima"
+                    href="https://drive.google.com/file/d/10j9ZBKeC8oSygzU48agpLi5-njhddTEk/view"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center text-emerald-600 font-medium hover:text-emerald-700"
                   >
-                    Read her story <ChevronRight className="ml-1 h-4 w-4" />
+                    Read her story <ExternalLink className="ml-1 h-4 w-4" />
                   </Link>
                 </div>
               </div>
@@ -249,10 +253,12 @@ export default function Home() {
                     How a group of women formed a cooperative that transformed their rural community.
                   </p>
                   <Link
-                    href="/stories/cooperative"
+                    href="https://drive.google.com/file/d/10j9ZBKeC8oSygzU48agpLi5-njhddTEk/view"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center text-emerald-600 font-medium hover:text-emerald-700"
                   >
-                    Read their story <ChevronRight className="ml-1 h-4 w-4" />
+                    Read their story <ExternalLink className="ml-1 h-4 w-4" />
                   </Link>
                 </div>
               </div>
