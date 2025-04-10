@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, ChevronRight, Heart, Users, Leaf, ExternalLink } from "lucide-react"
+import { ArrowRight, ChevronRight, Heart, Users, Leaf, ExternalLink, DollarSign, Sprout, Scale, Globe } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useState, useEffect } from "react"
 import { NewsletterModal } from "@/components/NewsletterModal"
@@ -49,8 +49,7 @@ export default function Home() {
                 Empowering Women in Marginalized Communities
               </h1>
               <p className="text-xl text-emerald-50">
-                A young feminist-led social enterprise creating sustainable income opportunities through eco-friendly
-                fashion.
+              A young feminist led social enterprise providing economic opportunities for displaced, marginalized women and underserved groups in conflict affected areas to foster gender equality and development.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                 <Button size="lg" className="bg-white text-emerald-700 hover:bg-emerald-50">
@@ -75,43 +74,76 @@ export default function Home() {
 
         <section className="py-16 bg-emerald-50">
           <div className="container">
-            <div className="mx-auto max-w-3xl text-center mb-12">
+            <div className="mx-auto max-w-4xl text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tight text-emerald-800 sm:text-4xl">
                 By Women, With Women, and For Women
               </h2>
               <p className="mt-4 text-lg text-gray-600">
-                Breaking the cycle of inequality through sustainable income generation and skills acquisition.
+                Breaking the cycle of inequality through sustainable income generation, skills acquisition, and advocacy.
               </p>
             </div>
-            <div className="grid gap-8 md:grid-cols-3">
-              <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+              <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
                 <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-emerald-100">
                   <Heart className="h-6 w-6 text-emerald-600" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Economic Empowerment</h3>
-                <p className="text-gray-600">
-                  Creating sustainable income opportunities for women in marginalized communities through eco-friendly
-                  fashion.
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Economic Empowerment</h3>
+                <p className="text-gray-600 text-sm">
+                  Creating sustainable income opportunities through eco-friendly fashion and entrepreneurship.
                 </p>
               </div>
-              <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+              <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
                 <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-emerald-100">
                   <Users className="h-6 w-6 text-emerald-600" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Skills Acquisition</h3>
-                <p className="text-gray-600">
-                  Providing free entrepreneurial and skills acquisition training for low-income or underprivileged
-                  women.
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Skills Acquisition</h3>
+                <p className="text-gray-600 text-sm">
+                  Providing free entrepreneurial and vocational skills training for low-income women.
                 </p>
               </div>
-              <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+              <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
                 <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-emerald-100">
                   <Leaf className="h-6 w-6 text-emerald-600" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Sustainable Fashion</h3>
-                <p className="text-gray-600">
-                  Promoting eco-friendly fashion design as a vehicle for financial inclusion, empowerment, and gender
-                  equality.
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Sustainable Fashion</h3>
+                <p className="text-gray-600 text-sm">
+                  Promoting eco-friendly design as a vehicle for financial inclusion and empowerment.
+                </p>
+              </div>
+              <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-emerald-100">
+                  <DollarSign className="h-6 w-6 text-emerald-600" />
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Micro Loans</h3>
+                <p className="text-gray-600 text-sm">
+                  Offering access to capital through small business grants and microloans for women entrepreneurs.
+                </p>
+              </div>
+              <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-emerald-100">
+                  <Sprout className="h-6 w-6 text-emerald-600" />
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Her Farm Initiative</h3>
+                <p className="text-gray-600 text-sm">
+                  Training women in sustainable agriculture and connecting them to markets.
+                </p>
+              </div>
+              <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-emerald-100">
+                  <Scale className="h-6 w-6 text-emerald-600" />
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Policy Advocacy</h3>
+                <p className="text-gray-600 text-sm">
+                  Working towards systemic change by advocating for policies that support women's rights.
+                </p>
+              </div>
+              <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-emerald-100">
+                  <Globe className="h-6 w-6 text-emerald-600" />
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Gender & Climate Justice</h3>
+                <p className="text-gray-600 text-sm">
+                  Addressing the interconnectedness of gender inequality and climate change impacts.
                 </p>
               </div>
             </div>

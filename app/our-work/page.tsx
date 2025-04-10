@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Leaf, Users, Banknote, ArrowRight, Award, ChevronRight, ExternalLink, ArrowUpRight } from "lucide-react";
+import { Leaf, Users, Banknote, ArrowRight, Award, ChevronRight, ExternalLink, ArrowUpRight, MapPin, Milestone } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
@@ -242,6 +242,63 @@ export default function OurWorkPage() {
             </div>
           </div>
         </section>
+
+      
+
+        {/* About Us Section - New */}
+        <section className="bg-emerald-50 py-20 md:py-28">
+          <div className="container mx-auto px-4">
+            <div className="mb-16 text-center">
+                <span className="mb-4 inline-block rounded-full bg-emerald-100 px-4 py-1 text-sm font-semibold text-emerald-800">
+                    Who We Are
+                </span>
+                <h2 className="mb-4 text-3xl font-bold text-gray-800 md:text-4xl">
+                  About Project Rebirth
+                </h2>
+                <div className="mx-auto mb-0 h-1 w-24 rounded-full bg-emerald-500"></div>
+            </div>
+            <div className="grid grid-cols-1 gap-12 md:grid-cols-3 md:gap-8">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="rounded-lg bg-white p-8 shadow-md"
+              >
+                <h3 className="mb-4 text-2xl font-semibold text-emerald-700">Our Story</h3>
+                <p className="text-gray-600">
+                  Founded with the vision of economic empowerment for women in vulnerable communities, Project Rebirth supports women through sustainable livelihood initiatives. Born out of personal experience and a deep understanding of the challenges faced by displaced women, we focus on creating practical solutions that foster independence and long-term stability.
+                </p>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="rounded-lg bg-white p-8 shadow-md"
+              >
+                <h3 className="mb-4 text-2xl font-semibold text-emerald-700">Our Mission</h3>
+                 <p className="text-gray-600">
+                  To empower women in refugee and rural communities by providing them with the skills, resources, and opportunities necessary for economic and social transformation.
+                </p>
+              </motion.div>
+               <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="rounded-lg bg-white p-8 shadow-md"
+               >
+                <h3 className="mb-4 text-2xl font-semibold text-emerald-700">Our Vision</h3>
+                 <p className="text-gray-600">
+                  A world where no woman is left behind—where every woman has access to financial independence and the ability to contribute meaningfully to society.
+                </p>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+
 
         {/* Call to Action Section */}
         <section className="relative overflow-hidden bg-gradient-to-r from-teal-600 to-emerald-700 py-20 md:py-28">
