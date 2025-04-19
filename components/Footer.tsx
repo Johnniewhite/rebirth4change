@@ -46,8 +46,18 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/team" className="text-gray-400 hover:text-white">
-                  The Team
+                <Link href="/strategic-framework" className="text-gray-400 hover:text-white">
+                  2022-2026 Strategic Framework
+                </Link>
+              </li>
+              <li>
+                <Link href="/partners" className="text-gray-400 hover:text-white">
+                  Our Partners
+                </Link>
+              </li>
+              <li>
+                <Link href="/press" className="text-gray-400 hover:text-white">
+                  Press
                 </Link>
               </li>
             </ul>
@@ -115,7 +125,7 @@ export function Footer() {
               </Link>
             </div>
             <p className="text-gray-400">
-              Email: info@rebirth4change.org
+              Email: team@rebirth4change.org
               <br />
               Phone: +234 123 456 7890
             </p>

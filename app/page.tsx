@@ -169,9 +169,11 @@ export default function Home() {
                   women to break this cycle of inequality and achieve a sustainable source of income generation.
                 </p>
                 <div className="pt-4">
+                  <Link href="/our-work">
                   <Button className="bg-emerald-600 hover:bg-emerald-700">
                     Learn About Our Work <ChevronRight className="ml-2 h-5 w-5" />
                   </Button>
+                  </Link>
                 </div>
               </div>
               <div className="relative h-[400px] rounded-xl overflow-hidden shadow-xl">
