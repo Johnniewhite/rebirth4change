@@ -52,12 +52,16 @@ export default function Home() {
               A young feminist led social enterprise providing economic opportunities for displaced, marginalized women and underserved groups in conflict affected areas to foster gender equality and development.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                <Button size="lg" className="bg-white text-emerald-700 hover:bg-emerald-50">
-                  Get Involved <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
+                <Link href="mailto:team@rebirth4change.org?subject=Get%20Involved%20with%20Project%20Rebirth">
+                  <Button size="lg" className="bg-white text-emerald-700 hover:bg-emerald-50">
+                    Get Involved <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </Link>
+                <Link href="/our-work">
                 <Button size="lg" variant="outline" className="border-white text-emerald-700 hover:bg-white/10">
                   Learn More
                 </Button>
+                </Link>
               </div>
             </div>
             <div className="relative h-[300px] md:h-[400px] rounded-xl overflow-hidden shadow-2xl">
@@ -297,11 +301,11 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="mt-12 text-center">
+            {/* <div className="mt-12 text-center">
               <Button variant="outline" className="border-emerald-600 text-emerald-600 hover:bg-emerald-50">
                 View All Stories
               </Button>
-            </div>
+            </div> */}
           </div>
         </section>
 

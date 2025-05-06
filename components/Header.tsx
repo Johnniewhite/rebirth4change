@@ -218,7 +218,9 @@ export function Header() {
                 className="w-full bg-emerald-600 hover:bg-emerald-700"
                 onClick={() => setIsOpen(false)}
               >
-                Donate Now
+                <Link href="mailto:team@rebirth4change.org?subject=Donation%20Inquiry" className="text-white w-full block">
+                  Donate Now
+                </Link>
               </Button>
             </div>
           </motion.div>

@@ -354,7 +354,7 @@ export default function OurWorkPage() {
                     asChild 
                     className="relative overflow-hidden border-0 bg-gradient-to-r from-emerald-500 to-teal-500 px-8 py-6 font-semibold text-white shadow-lg transition-all duration-300 hover:from-emerald-600 hover:to-teal-600 hover:shadow-emerald-700/30"
                   >
-                    <Link href="/get-involved#volunteer" className="flex items-center gap-2">
+                    <Link href="mailto:team@rebirth4change.org?subject=Volunteer%20Inquiry" className="flex items-center gap-2">
                       <span className="absolute -left-10 -top-10 h-20 w-20 rounded-full bg-white opacity-10"></span>
                       <span className="absolute -bottom-10 -right-10 h-20 w-20 rounded-full bg-white opacity-10"></span>
                       <span className="relative z-10 flex items-center gap-2">

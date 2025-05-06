@@ -1,6 +1,7 @@
 import Image from "next/image"
 import { ArrowRight, Quote } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 export default function OurStory() {
   return (
@@ -594,7 +595,11 @@ export default function OurStory() {
                 mission. We invite you to become part of this journey of transformation.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <Button className="bg-emerald-600 hover:bg-emerald-700">Support Our Work</Button>
+                <Button className="bg-emerald-600 hover:bg-emerald-700">
+                  <Link href="mailto:team@rebirth4change.org?subject=Support%20Inquiry" className="text-white">
+                    Support Our Work
+                  </Link>
+                </Button>
                 <Button variant="outline" className="border-emerald-600 text-emerald-600 hover:bg-emerald-50">
                   Meet Our Team
                 </Button>
