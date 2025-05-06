@@ -148,9 +148,6 @@ export default function OurWorkPage() {
                     </div>
                     <h3 className={`mb-4 text-xl font-bold ${item.textColor} md:text-2xl`}>{item.title}</h3>
                     <p className="mb-6 text-gray-600">{item.description}</p>
-                    <Link href={`/our-work/${item.title.toLowerCase().replace(/\s+/g, '-')}`} className={`inline-flex items-center font-medium ${item.textColor} hover:underline`}>
-                      Learn more <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
                   </div>
                 </motion.div>
               ))}
@@ -175,8 +172,8 @@ export default function OurWorkPage() {
                 <div className="absolute bottom-0 left-0 p-8 text-white md:max-w-lg">
                   <h3 className="mb-3 text-2xl font-bold">Our Impact in Action</h3>
                   <p className="mb-4 text-emerald-100">See how our programs are transforming lives and communities across Nigeria, creating new opportunities for women to thrive.</p>
-                  <Button variant="outline" className="border-2 border-white bg-transparent text-white backdrop-blur-sm hover:bg-white/20">
-                    View Success Stories
+                  <Button variant="outline" asChild className="border-2 border-white bg-transparent text-white backdrop-blur-sm hover:bg-white/20">
+                    <Link href="/#success-stories">View Success Stories</Link>
                   </Button>
                 </div>
               </div>
@@ -333,7 +330,7 @@ export default function OurWorkPage() {
                     asChild 
                     className="relative overflow-hidden bg-white px-8 py-6 font-semibold text-emerald-700 shadow-lg transition-all duration-300 hover:shadow-emerald-200/50"
                   >
-                    <Link href="/get-involved#donate" className="flex items-center gap-2">
+                    <Link href="mailto:team@rebirth4change.org?subject=Donation%20Inquiry" className="flex items-center gap-2">
                       <span className="absolute -left-10 -top-10 h-20 w-20 rounded-full bg-emerald-100 opacity-50"></span>
                       <span className="absolute -bottom-10 -right-10 h-20 w-20 rounded-full bg-teal-100 opacity-50"></span>
                       <span className="relative z-10 flex items-center gap-2">
@@ -374,7 +371,7 @@ export default function OurWorkPage() {
                     asChild 
                     className="group relative overflow-hidden border-2 border-white bg-transparent px-8 py-6 font-semibold text-white backdrop-blur-sm transition-all duration-500 hover:bg-white hover:text-emerald-700"
                   >
-                    <Link href="/get-involved#partner" className="flex items-center gap-2">
+                    <Link href="mailto:team@rebirth4change.org?subject=Partnership%20Inquiry" className="flex items-center gap-2">
                       <span className="relative z-10 flex items-center gap-2">
                         <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/20 transition-colors duration-500 group-hover:bg-emerald-100">🌟</span>
                         Become a Partner

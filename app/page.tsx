@@ -227,7 +227,7 @@ export default function Home() {
 
         <section className="py-16">
           <div className="container">
-            <div className="mx-auto max-w-3xl text-center mb-12">
+            <div id="success-stories" className="mx-auto max-w-3xl text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Success Stories</h2>
               <p className="mt-4 text-lg text-gray-600">
                 Meet the women whose lives have been transformed through our programs.
@@ -297,6 +297,81 @@ export default function Home() {
                 View All Stories
               </Button>
             </div> */}
+          </div>
+        </section>
+
+        {/* Photo Gallery Section */}
+        <section className="py-16 bg-gray-50">
+          <div className="container">
+            <div className="mx-auto max-w-3xl text-center mb-12">
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our Gallery</h2>
+              <p className="mt-4 text-lg text-gray-600">
+                Glimpses of our community, events, and the inspiring women we work with.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                <div className="relative aspect-square">
+                  <Image 
+                    src="/second.jpeg" 
+                    alt="Gallery Image" 
+                    fill 
+                    className="object-cover hover:scale-105 transition-transform duration-500" 
+                  />
+                </div>
+              </div>
+              <div className="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                <div className="relative aspect-square">
+                  <Image 
+                    src="/third.jpeg" 
+                    alt="Gallery Image" 
+                    fill 
+                    className="object-cover hover:scale-105 transition-transform duration-500" 
+                  />
+                </div>
+              </div>
+              <div className="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                <div className="relative aspect-square">
+                  <Image 
+                    src="/seventh.jpeg" 
+                    alt="Gallery Image" 
+                    fill 
+                    className="object-cover hover:scale-105 transition-transform duration-500" 
+                  />
+                </div>
+              </div>
+              <div className="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                <div className="relative aspect-square">
+                  <Image 
+                    src="/sixth.jpeg" 
+                    alt="Gallery Image" 
+                    fill 
+                    className="object-cover hover:scale-105 transition-transform duration-500" 
+                  />
+                </div>
+              </div>
+              <div className="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                <div className="relative aspect-square">
+                  <Image 
+                    src="/fifth.jpeg" 
+                    alt="Gallery Image" 
+                    fill 
+                    className="object-cover hover:scale-105 transition-transform duration-500" 
+                  />
+                </div>
+              </div>
+              <div className="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                <div className="relative aspect-square">
+                  <Image 
+                    src="/first.jpeg" 
+                    alt="Gallery Image" 
+                    fill 
+                    className="object-cover hover:scale-105 transition-transform duration-500" 
+                  />
+                </div>
+              </div>
+            </div>
+            
           </div>
         </section>
 
