@@ -24,59 +24,40 @@ export function Footer() {
           </div>
           <div>
             <h3 className="font-bold text-lg mb-4">Quick Links</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/" className="text-gray-400 hover:text-white">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/our-story" className="text-gray-400 hover:text-white">
-                  Our Story
-                </Link>
-              </li>
-              <li>
-                <Link href="/our-work" className="text-gray-400 hover:text-white">
-                  Our Work
-                </Link>
-              </li>
-              <li>
-                <Link href="/ethical-impact" className="text-gray-400 hover:text-white">
-                  Ethical Impact
-                </Link>
-              </li>
-              <li>
-                <Link href="/strategic-framework" className="text-gray-400 hover:text-white">
-                  2022-2026 Strategic Framework
-                </Link>
-              </li>
-              <li>
-                <Link href="/partners" className="text-gray-400 hover:text-white">
-                  Our Partners
-                </Link>
-              </li>
-              <li>
-                <Link href="/press" className="text-gray-400 hover:text-white">
-                  Press
-                </Link>
-              </li>
-            </ul>
+            <nav>
+              <ul className="flex flex-wrap justify-center space-x-6">
+                <li><Link href="/" className="text-gray-300 hover:text-white">Home</Link></li>
+                <li><Link href="/our-story" className="text-gray-300 hover:text-white">Our Story</Link></li>
+                <li><Link href="/our-work" className="text-gray-300 hover:text-white">Our Work</Link></li>
+                <li><Link href="/our-team" className="text-gray-300 hover:text-white">Our Team</Link></li>
+                <li><Link href="/ethical-impact" className="text-gray-300 hover:text-white">Ethical Impact</Link></li>
+              </ul>
+            </nav>
           </div>
           <div>
             <h3 className="font-bold text-lg mb-4">Get Involved</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/volunteer" className="text-gray-400 hover:text-white">
+                <Link 
+                  href="mailto:team@rebirth4change.org?subject=Volunteer%20Inquiry" 
+                  className="text-gray-400 hover:text-white"
+                >
                   Volunteer
                 </Link>
               </li>
               <li>
-                <Link href="/donate" className="text-gray-400 hover:text-white">
+                <Link 
+                  href="mailto:team@rebirth4change.org?subject=Donation%20Inquiry" 
+                  className="text-gray-400 hover:text-white"
+                >
                   Donate
                 </Link>
               </li>
               <li>
-                <Link href="/partner" className="text-gray-400 hover:text-white">
+                <Link 
+                  href="mailto:team@rebirth4change.org?subject=Partnership%20Inquiry" 
+                  className="text-gray-400 hover:text-white"
+                >
                   Partner With Us
                 </Link>
               </li>
@@ -86,7 +67,10 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-gray-400 hover:text-white">
+                <Link 
+                  href="mailto:team@rebirth4change.org?subject=Contact%20Inquiry" 
+                  className="text-gray-400 hover:text-white"
+                >
                   Contact Us
                 </Link>
               </li>

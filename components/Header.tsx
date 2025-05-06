@@ -80,6 +80,14 @@ export function Header() {
             Our Work
           </Link>
           <Link 
+            href="/our-team" 
+            className={`text-sm font-medium ${isActive("/our-team") 
+              ? "text-emerald-700 relative after:absolute after:bottom-[-16px] after:left-0 after:h-[3px] after:w-full after:bg-emerald-600" 
+              : "text-gray-700 hover:text-emerald-600"}`}
+          >
+            Our Team
+          </Link>
+          <Link 
             href="/ethical-impact" 
             className={`text-sm font-medium ${isActive("/ethical-impact") 
               ? "text-emerald-700 relative after:absolute after:bottom-[-16px] after:left-0 after:h-[3px] after:w-full after:bg-emerald-600" 
@@ -114,7 +122,14 @@ export function Header() {
         </nav>
         
         <div className="flex items-center gap-4">
-          <Button className="hidden md:flex bg-emerald-600 hover:bg-emerald-700">Donate Now</Button>
+          <Button 
+            className="hidden md:flex bg-emerald-600 hover:bg-emerald-700"
+            onClick={() => {
+              window.location.href = "mailto:team@rebirth4change.org?subject=Donation%20Inquiry";
+            }}
+          >
+            Donate Now
+          </Button>
           <Button 
             variant="outline" 
             size="icon" 
@@ -170,6 +185,15 @@ export function Header() {
                 Our Work
               </Link>
               <Link 
+                href="/our-team" 
+                className={`block text-base font-medium ${
+                  isActive("/our-team") ? "text-emerald-700 font-semibold" : "text-gray-700 hover:text-emerald-600"
+                }`}
+                onClick={() => setIsOpen(false)}
+              >
+                Our Team
+              </Link>
+              <Link 
                 href="/ethical-impact" 
                 className={`block text-base font-medium ${
                   isActive("/ethical-impact") ? "text-emerald-700 font-semibold" : "text-gray-700 hover:text-emerald-600"
@@ -216,11 +240,12 @@ export function Header() {
               </Link>
               <Button 
                 className="w-full bg-emerald-600 hover:bg-emerald-700"
-                onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  window.location.href = "mailto:team@rebirth4change.org?subject=Donation%20Inquiry";
+                  setIsOpen(false);
+                }}
               >
-                <Link href="mailto:team@rebirth4change.org?subject=Donation%20Inquiry" className="text-white w-full block">
-                  Donate Now
-                </Link>
+                Donate Now
               </Button>
             </div>
           </motion.div>

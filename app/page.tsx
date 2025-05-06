@@ -195,20 +195,20 @@ export default function Home() {
                 Help us empower more women through sustainable fashion and skills development.
               </p>
             </div>
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
               <div className="bg-emerald-700/50 p-6 rounded-lg hover:bg-emerald-700/70 transition-colors">
                 <h3 className="text-xl font-bold mb-2">Volunteer</h3>
                 <p className="text-emerald-100 mb-4">
                   Share your skills and time to support our programs and initiatives.
                 </p>
-                <Link href="/volunteer" className="inline-flex items-center text-white font-medium hover:underline">
+                <Link href="mailto:team@rebirth4change.org?subject=Volunteer%20Inquiry" className="inline-flex items-center text-white font-medium hover:underline">
                   Learn more <ChevronRight className="ml-1 h-4 w-4" />
                 </Link>
               </div>
               <div className="bg-emerald-700/50 p-6 rounded-lg hover:bg-emerald-700/70 transition-colors">
                 <h3 className="text-xl font-bold mb-2">Donate</h3>
                 <p className="text-emerald-100 mb-4">Your financial support helps us expand our reach and impact.</p>
-                <Link href="/donate" className="inline-flex items-center text-white font-medium hover:underline">
+                <Link href="mailto:team@rebirth4change.org?subject=Donation%20Inquiry" className="inline-flex items-center text-white font-medium hover:underline">
                   Support us <ChevronRight className="ml-1 h-4 w-4" />
                 </Link>
               </div>
@@ -217,17 +217,8 @@ export default function Home() {
                 <p className="text-emerald-100 mb-4">
                   Collaborate with us to create sustainable change in communities.
                 </p>
-                <Link href="/partner" className="inline-flex items-center text-white font-medium hover:underline">
+                <Link href="mailto:team@rebirth4change.org?subject=Partnership%20Inquiry" className="inline-flex items-center text-white font-medium hover:underline">
                   Join forces <ChevronRight className="ml-1 h-4 w-4" />
-                </Link>
-              </div>
-              <div className="bg-emerald-700/50 p-6 rounded-lg hover:bg-emerald-700/70 transition-colors">
-                <h3 className="text-xl font-bold mb-2">Shop</h3>
-                <p className="text-emerald-100 mb-4">
-                  Purchase eco-friendly products made by the women in our program.
-                </p>
-                <Link href="/shop" className="inline-flex items-center text-white font-medium hover:underline">
-                  Browse products <ChevronRight className="ml-1 h-4 w-4" />
                 </Link>
               </div>
             </div>

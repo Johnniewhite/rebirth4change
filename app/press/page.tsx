@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Newspaper, Mic, Camera, ExternalLink, FileText, Calendar, ChevronRight, ArrowUpRight, Share2, Download } from "lucide-react";
+import { Newspaper, Mic, Camera, ExternalLink, FileText, Calendar, ChevronRight, ArrowUpRight, Share2, Download, Play, Video } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -83,24 +83,40 @@ export default function PressPage() {
   ];
 
   // Media resources
-  const mediaResources = [
+  // const mediaResources = [
+  //   {
+  //     title: "Project Rebirth Logo Package",
+  //     description: "Download high-resolution logos for media use",
+  //     icon: FileText,
+  //     downloadLink: "#"
+  //   },
+  //   {
+  //     title: "Official Photos",
+  //     description: "High-quality images from our programs and events",
+  //     icon: Camera,
+  //     downloadLink: "#"
+  //   },
+  //   {
+  //     title: "Fact Sheet 2023",
+  //     description: "Key statistics and information about our impact",
+  //     icon: FileText,
+  //     downloadLink: "#"
+  //   }
+  // ];
+
+  // Videos section - New content
+  const videos = [
     {
-      title: "Project Rebirth Logo Package",
-      description: "Download high-resolution logos for media use",
-      icon: FileText,
-      downloadLink: "#"
+      title: "YGC Recoupling Awards 2023 - Project Rebirth",
+      thumbnail: "/youtube1.png", // Using a placeholder image, you can replace this with actual thumbnails
+      youtubeUrl: "https://www.youtube.com/watch?v=iRh9FdOCPQU",
+      date: "July 15, 2023"
     },
     {
-      title: "Official Photos",
-      description: "High-quality images from our programs and events",
-      icon: Camera,
-      downloadLink: "#"
-    },
-    {
-      title: "Fact Sheet 2023",
-      description: "Key statistics and information about our impact",
-      icon: FileText,
-      downloadLink: "#"
+      title: "Project Rebirth Documentary",
+      thumbnail: "/work1.jpg", // Using a placeholder image, you can replace this with actual thumbnails
+      youtubeUrl: "https://www.youtube.com/watch?v=bQC6whYlSbY",
+      date: "June 22, 2023"
     }
   ];
 
@@ -180,6 +196,18 @@ export default function PressPage() {
                 }`}
               >
                 Media Coverage
+              </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={() => setActiveTab('videos')}
+                className={`rounded-full px-6 py-3 font-medium transition-all duration-200 ${
+                  activeTab === 'videos' 
+                    ? 'bg-gradient-to-r from-cyan-600 to-blue-600 text-white shadow-md' 
+                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                }`}
+              >
+                Videos
               </motion.button>
               <motion.button
                 whileHover={{ scale: 1.03 }}
@@ -264,8 +292,74 @@ export default function PressPage() {
               </motion.div>
             )}
 
+            {/* Videos Tab - New content */}
+            {activeTab === 'videos' && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="grid grid-cols-1 gap-8 md:grid-cols-2"
+              >
+                {videos.map((video, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    whileHover={{ y: -8, transition: { duration: 0.3 } }}
+                    className="group relative overflow-hidden rounded-2xl border border-gray-100 bg-white p-6 shadow-xl"
+                  >
+                    <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-gradient-to-br from-white via-blue-50 to-blue-100 opacity-50 transition-transform duration-500 group-hover:scale-125"></div>
+                    
+                    <div className="relative z-10">
+                      <div className="mb-4 flex justify-between">
+                        <span className="inline-block rounded-full bg-blue-50 px-3 py-1 text-xs font-medium text-blue-700">
+                          Video Feature
+                        </span>
+                        <span className="inline-block rounded-full bg-gray-50 px-3 py-1 text-xs font-medium text-gray-700">
+                          {video.date}
+                        </span>
+                      </div>
+                      
+                      {/* Thumbnail with play button overlay */}
+                      <Link 
+                        href={video.youtubeUrl} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="relative mb-6 block aspect-video w-full overflow-hidden rounded-lg border border-gray-100 bg-gray-50 shadow-md group-hover:shadow-lg transition-shadow duration-300"
+                      >
+                        <Image 
+                          src={video.thumbnail} 
+                          alt={video.title} 
+                          fill
+                          className="object-cover"
+                        />
+                        <div className="absolute inset-0 flex items-center justify-center bg-black/30 transition-opacity group-hover:bg-black/40">
+                          <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white/90 text-blue-600 transition-transform group-hover:scale-110">
+                            <Play className="h-8 w-8 fill-current" />
+                          </div>
+                        </div>
+                      </Link>
+                      
+                      <h3 className="mb-4 text-xl font-bold text-gray-800">{video.title}</h3>
+                      
+                      <Link 
+                        href={video.youtubeUrl} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="group/link inline-flex items-center text-sm font-medium text-cyan-600 transition-colors hover:text-cyan-800"
+                      >
+                        Watch on YouTube <ExternalLink className="ml-1 h-4 w-4 transition-transform duration-300 group-hover/link:translate-x-1" />
+                      </Link>
+                    </div>
+                  </motion.div>
+                ))}
+              </motion.div>
+            )}
+
             {/* Press Releases Tab */}
-            {activeTab === 'releases' && (
+            {/* {activeTab === 'releases' && (
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -316,10 +410,10 @@ export default function PressPage() {
                   </motion.div>
                 ))}
               </motion.div>
-            )}
+            )} */}
 
             {/* Media Resources Tab */}
-            {activeTab === 'resources' && (
+            {/* {activeTab === 'resources' && (
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -355,7 +449,7 @@ export default function PressPage() {
                   </div>
                 </div>
               </motion.div>
-            )}
+            )} */}
           </div>
         </section>
 
