@@ -1,42 +1,59 @@
-import React from 'react';
-import Image from 'next/image';
-
-export default function OurTeam() {
+import Image from "next/image";
+import { PageHero } from "@/components/PageHero";
+import { ContactCTA } from "@/components/ContactCTA";
+const team = [
+  ["Oluwadamilola Akintewe", "Community Development Officer", "/dami2.jpg"],
+  ["Ahmodu Blessing", "Programs Officer", "/blessing.jpg"],
+  ["Priscilla Bilkisu", "Local Translator", null],
+  ["Luka", "Local Liaison Officer", null],
+  ["Doris Asuquo", "Communications Officer", null],
+];
+export const metadata = { title: "Our Team | Project Rebirth" };
+export default function Page() {
   return (
-    <main className="flex min-h-screen flex-col items-center p-8 md:p-24">
-      <h1 className="text-4xl font-bold mb-12 text-center">Our Team</h1>
-      
-      <div className="max-w-4xl w-full">
-        <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-          <div className="flex flex-col md:flex-row gap-6 items-center">
-            {/* You can add an image here if available */}
-            <div className="w-48 h-48 relative">
-              <Image 
-                src="/dami.jpg" 
-                alt="Oluwadamilola Akintewe" 
-                fill
-                className="rounded-full object-cover"
-              />
-            </div>
-            
-            <div className="flex-1">
-              <h2 className="text-2xl font-bold mb-2">Oluwadamilola Akintewe</h2>
-              <p className="text-gray-600 italic mb-4">(Founder and Team Lead)</p>
-              <p className="text-gray-800 mb-4">
-                A social entrepreneur and change leader, she founded Project Rebirth inspired by her experience 
-                growing up on a farming settlement in a rural community. She is committed to smashing every form 
-                of oppression against women empowerment.
-              </p>
-              <a 
-                href="mailto:dami@rebirth4change.org?subject=Contact%20from%20Website" 
-                className="inline-flex items-center px-4 py-2 bg-emerald-600 text-white rounded-md hover:bg-emerald-700"
-              >
-                Contact Dami
-              </a>
-            </div>
+    <main id="main">
+      <PageHero
+        eyebrow="Our team"
+        title="The people behind the work."
+        description="Programme leadership, community relationships and communication come together to support people rebuilding their lives."
+        image="/home1.jpg"
+        imageAlt="Project Rebirth team"
+      />
+      <section className="section-space">
+        <div className="site-container">
+          <p className="eyebrow">Programme leadership & community support</p>
+          <div className="team-grid">
+            {team.map(([name, role, img]) => (
+              <article key={name}>
+                <div className="team-image">
+                  {img ? (
+                    <Image
+                      src={img}
+                      alt={name!}
+                      fill
+                      className="object-cover object-top"
+                      sizes="(max-width:760px) 100vw, 33vw"
+                    />
+                  ) : (
+                    <span aria-hidden="true">
+                      {name!
+                        .split(" ")
+                        .map((n) => n[0])
+                        .join("")}
+                    </span>
+                  )}
+                </div>
+                <h2>{name}</h2>
+                <p>{role}</p>
+              </article>
+            ))}
           </div>
         </div>
-      </div>
+      </section>
+      <ContactCTA
+        title="Join our volunteer community."
+        description="Contribute to community activities, mentoring and outreach alongside our programme team."
+      />
     </main>
   );
-} 
+}

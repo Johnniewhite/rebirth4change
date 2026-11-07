@@ -1,256 +1,110 @@
-"use client"
-
-import Image from "next/image"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { useState, useEffect } from "react"
-import { X, Menu } from "lucide-react"
-import { motion, AnimatePresence } from "framer-motion"
-import { usePathname } from "next/navigation"
+"use client";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
+import { Menu, X, ArrowUpRight } from "lucide-react";
+import { navigation } from "@/lib/site";
 
 export function Header() {
-  const [isOpen, setIsOpen] = useState(false)
-  const pathname = usePathname()
-
-  // Close mobile menu when window is resized to desktop size
+  const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const toggle = useRef<HTMLButtonElement>(null);
+  const panel = useRef<HTMLElement>(null);
   useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 768) {
-        setIsOpen(false)
+    setOpen(false);
+  }, [pathname]);
+  useEffect(() => {
+    if (!open) return;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    panel.current?.querySelector<HTMLAnchorElement>("a")?.focus();
+    function key(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setOpen(false);
+        toggle.current?.focus();
+      }
+      if (event.key === "Tab") {
+        const links = panel.current?.querySelectorAll<HTMLAnchorElement>("a");
+        if (!links?.length) return;
+        if (event.shiftKey && document.activeElement === links[0]) {
+          event.preventDefault();
+          toggle.current?.focus();
+        } else if (
+          !event.shiftKey &&
+          document.activeElement === links[links.length - 1]
+        ) {
+          event.preventDefault();
+          toggle.current?.focus();
+        } else if (document.activeElement === toggle.current) {
+          event.preventDefault();
+          (event.shiftKey ? links[links.length - 1] : links[0]).focus();
+        }
       }
     }
-
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
-
-  // Prevent scroll when mobile menu is open
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = ''
-    }
+    document.addEventListener("keydown", key);
     return () => {
-      document.body.style.overflow = ''
-    }
-  }, [isOpen])
-
-  // Function to determine if a link is active
-  const isActive = (path: string) => {
-    if (path === "/" && pathname === "/") return true
-    if (path !== "/" && pathname.startsWith(path)) return true
-    return false
-  }
-
+      document.body.style.overflow = previous;
+      document.removeEventListener("keydown", key);
+    };
+  }, [open]);
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-white">
-      <div className="container flex h-16 items-center justify-between">
-        <div className="flex items-center gap-2">
-          <Link href="/" className="flex items-center gap-2">
-            <Image src="/logo.png" alt="Project Rebirth Logo" width={40} height={40} className="h-10 w-auto" />
-            <span className="hidden font-bold text-emerald-700 sm:inline-block">Project Rebirth</span>
-          </Link>
-        </div>
-        
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-6">
-          <Link 
-            href="/" 
-            className={`text-sm font-medium ${isActive("/") 
-              ? "text-emerald-700 relative after:absolute after:bottom-[-16px] after:left-0 after:h-[3px] after:w-full after:bg-emerald-600" 
-              : "text-gray-700 hover:text-emerald-600"}`}
-          >
-            Home
-          </Link>
-          <Link 
-            href="/our-story" 
-            className={`text-sm font-medium ${isActive("/our-story") 
-              ? "text-emerald-700 relative after:absolute after:bottom-[-16px] after:left-0 after:h-[3px] after:w-full after:bg-emerald-600" 
-              : "text-gray-700 hover:text-emerald-600"}`}
-          >
-            Our Story
-          </Link>
-          <Link 
-            href="/our-work" 
-            className={`text-sm font-medium ${isActive("/our-work") 
-              ? "text-emerald-700 relative after:absolute after:bottom-[-16px] after:left-0 after:h-[3px] after:w-full after:bg-emerald-600" 
-              : "text-gray-700 hover:text-emerald-600"}`}
-          >
-            Our Work
-          </Link>
-          <Link 
-            href="/our-team" 
-            className={`text-sm font-medium ${isActive("/our-team") 
-              ? "text-emerald-700 relative after:absolute after:bottom-[-16px] after:left-0 after:h-[3px] after:w-full after:bg-emerald-600" 
-              : "text-gray-700 hover:text-emerald-600"}`}
-          >
-            Our Team
-          </Link>
-          <Link 
-            href="/ethical-impact" 
-            className={`text-sm font-medium ${isActive("/ethical-impact") 
-              ? "text-emerald-700 relative after:absolute after:bottom-[-16px] after:left-0 after:h-[3px] after:w-full after:bg-emerald-600" 
-              : "text-gray-700 hover:text-emerald-600"}`}
-          >
-            Ethical Impact
-          </Link>
-          <Link 
-            href="/strategic-framework" 
-            className={`text-sm font-medium ${isActive("/strategic-framework") 
-              ? "text-emerald-700 relative after:absolute after:bottom-[-16px] after:left-0 after:h-[3px] after:w-full after:bg-emerald-600" 
-              : "text-gray-700 hover:text-emerald-600"}`}
-          >
-            2022-2026 Strategic Framework
-          </Link>
-          <Link 
-            href="/partners" 
-            className={`text-sm font-medium ${isActive("/partners") 
-              ? "text-emerald-700 relative after:absolute after:bottom-[-16px] after:left-0 after:h-[3px] after:w-full after:bg-emerald-600" 
-              : "text-gray-700 hover:text-emerald-600"}`}
-          >
-            Our Partners
-          </Link>
-          <Link 
-            href="/press" 
-            className={`text-sm font-medium ${isActive("/press") 
-              ? "text-emerald-700 relative after:absolute after:bottom-[-16px] after:left-0 after:h-[3px] after:w-full after:bg-emerald-600" 
-              : "text-gray-700 hover:text-emerald-600"}`}
-          >
-            Press
-          </Link>
+    <header className="site-header">
+      <a href="#main" className="skip-link">
+        Skip to content
+      </a>
+      <div className="site-container header-inner">
+        <Link href="/" className="brand" aria-label="Project Rebirth home">
+          <Image src="/logo.png" alt="" width={64} height={64} priority />
+          <span>
+            Project Rebirth<small>Communities. Dignity. Opportunity.</small>
+          </span>
+        </Link>
+        <nav className="desktop-nav" aria-label="Primary navigation">
+          <Link href="/about-us">About us</Link>
+          <Link href="/community-programmes">Programmes</Link>
+          <Link href="/economic-opportunities">Opportunities</Link>
+          <Link href="/impact-and-learning">Impact</Link>
         </nav>
-        
-        <div className="flex items-center gap-4">
-          <Button 
-            className="hidden md:flex bg-emerald-600 hover:bg-emerald-700"
-            onClick={() => {
-              window.location.href = "mailto:team@rebirth4change.org?subject=Donation%20Inquiry";
-            }}
+        <div className="header-actions">
+          <Link href="/get-involved" className="button-primary header-cta">
+            Get involved <ArrowUpRight size={16} />
+          </Link>
+          <button
+            ref={toggle}
+            onClick={() => setOpen(!open)}
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            aria-controls="site-menu"
+            className="menu-toggle"
           >
-            Donate Now
-          </Button>
-          <Button 
-            variant="outline" 
-            size="icon" 
-            className="md:hidden"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
-          >
-            {isOpen ? (
-              <X className="h-6 w-6" />
-            ) : (
-              <Menu className="h-6 w-6" />
-            )}
-          </Button>
+            {open ? <X /> : <Menu />}
+          </button>
         </div>
       </div>
-
-      {/* Mobile Navigation */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.2 }}
-            className="md:hidden bg-white border-t"
-          >
-            <div className="container py-4 space-y-4">
-              <Link 
-                href="/" 
-                className={`block text-base font-medium ${
-                  isActive("/") ? "text-emerald-700 font-semibold" : "text-gray-700 hover:text-emerald-600"
-                }`}
-                onClick={() => setIsOpen(false)}
+      {open && (
+        <nav
+          ref={panel}
+          id="site-menu"
+          className="site-menu"
+          aria-label="All pages"
+        >
+          <div className="site-container menu-grid">
+            {navigation.map(([href, label], i) => (
+              <Link
+                key={href}
+                href={href}
+                aria-current={pathname === href ? "page" : undefined}
+                onClick={() => setOpen(false)}
               >
-                Home
+                <small>{String(i + 1).padStart(2, "0")}</small>
+                {label}
+                <ArrowUpRight size={20} />
               </Link>
-              <Link 
-                href="/our-story" 
-                className={`block text-base font-medium ${
-                  isActive("/our-story") ? "text-emerald-700 font-semibold" : "text-gray-700 hover:text-emerald-600"
-                }`}
-                onClick={() => setIsOpen(false)}
-              >
-                Our Story
-              </Link>
-              <Link 
-                href="/our-work" 
-                className={`block text-base font-medium ${
-                  isActive("/our-work") ? "text-emerald-700 font-semibold" : "text-gray-700 hover:text-emerald-600"
-                }`}
-                onClick={() => setIsOpen(false)}
-              >
-                Our Work
-              </Link>
-              <Link 
-                href="/our-team" 
-                className={`block text-base font-medium ${
-                  isActive("/our-team") ? "text-emerald-700 font-semibold" : "text-gray-700 hover:text-emerald-600"
-                }`}
-                onClick={() => setIsOpen(false)}
-              >
-                Our Team
-              </Link>
-              <Link 
-                href="/ethical-impact" 
-                className={`block text-base font-medium ${
-                  isActive("/ethical-impact") ? "text-emerald-700 font-semibold" : "text-gray-700 hover:text-emerald-600"
-                }`}
-                onClick={() => setIsOpen(false)}
-              >
-                Ethical Impact
-              </Link>
-              <Link 
-                href="/strategic-framework" 
-                className={`block text-base font-medium ${
-                  isActive("/strategic-framework") ? "text-emerald-700 font-semibold" : "text-gray-700 hover:text-emerald-600"
-                }`}
-                onClick={() => setIsOpen(false)}
-              >
-                2022-2026 Strategic Framework
-              </Link>
-              <Link 
-                href="/team" 
-                className={`block text-base font-medium ${
-                  isActive("/team") ? "text-emerald-700 font-semibold" : "text-gray-700 hover:text-emerald-600"
-                }`}
-                onClick={() => setIsOpen(false)}
-              >
-                The Team
-              </Link>
-              <Link 
-                href="/partners" 
-                className={`block text-base font-medium ${
-                  isActive("/partners") ? "text-emerald-700 font-semibold" : "text-gray-700 hover:text-emerald-600"
-                }`}
-                onClick={() => setIsOpen(false)}
-              >
-                Our Partners
-              </Link>
-              <Link 
-                href="/press" 
-                className={`block text-base font-medium ${
-                  isActive("/press") ? "text-emerald-700 font-semibold" : "text-gray-700 hover:text-emerald-600"
-                }`}
-                onClick={() => setIsOpen(false)}
-              >
-                Press
-              </Link>
-              <Button 
-                className="w-full bg-emerald-600 hover:bg-emerald-700"
-                onClick={() => {
-                  window.location.href = "mailto:team@rebirth4change.org?subject=Donation%20Inquiry";
-                  setIsOpen(false);
-                }}
-              >
-                Donate Now
-              </Button>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            ))}
+          </div>
+        </nav>
+      )}
     </header>
-  )
-} 
+  );
+}

@@ -1,18 +1,20 @@
-import type { Metadata } from 'next'
-import './globals.css'
-import { Header } from '@/components/Header'
-import { Footer } from '@/components/Footer'
+import type { Metadata } from "next";
+import "./globals.css";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: 'Rebirth 4 Change',
-  description: 'Rebirth 4 Change',
-  generator: 'Rebirth 4 Change',
-}
+  title: "Project Rebirth — Rebuilding lives and livelihoods",
+  description:
+    "Community development, support for internally displaced people, and economic opportunities across Nigeria. Rebuilding lives and livelihoods with dignity since 2018.",
+  generator: "Rebirth 4 Change",
+  icons: { icon: "/favicon.png" },
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
@@ -22,5 +24,5 @@ export default function RootLayout({
         <Footer />
       </body>
     </html>
-  )
+  );
 }
