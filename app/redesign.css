@@ -1,4 +1,17 @@
 /* Expressive community identity: photography, strong type and purposeful colour. */
+.r-reach-grid > * {
+  min-width: 0;
+}
+@media (max-width: 360px) {
+  .r-reach .r-reach-grid h2 {
+    font-size: 32px;
+  }
+  .r-places > span {
+    font-size: 19px !important;
+    gap: 8px !important;
+    padding-inline: 6px !important;
+  }
+}
 body {
   background: #f7f5ed;
   color: #153d32;
