@@ -3,7 +3,7 @@ import { PageHero } from "@/components/PageHero";
 import { ContactCTA } from "@/components/ContactCTA";
 const team = [
   ["Oluwadamilola Akintewe", "Community Development Officer", "/dami2.jpg"],
-  ["Ahmodu Blessing", "Programs Officer", "/blessing.jpg"],
+  ["Ahmodu Blessing", "Program Manager", "/blessing.jpg"],
   ["Priscilla Bilkisu", "Local Translator", null],
   ["Luka", "Local Liaison Officer", null],
   ["Doris Asuquo", "Communications Officer", null],
